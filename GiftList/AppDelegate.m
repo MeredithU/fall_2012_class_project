@@ -10,12 +10,44 @@
 
 @implementation AppDelegate
 
++ (NSString*) occasionlistPath {
+    return [[AppDelegate stringWithUserDocuments] stringByAppendingPathComponent:@"occasion_list.plist"];
+}
+
++ (NSString *)stringWithUserDocuments {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    return documentsDirectory;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    sleep(3);
+    [self setUpAppearance];
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"occasion_list" ofType:@"plist"];
+    NSString* userdocs = [AppDelegate occasionlistPath];
+    NSFileManager* fm = [NSFileManager defaultManager];
+    BOOL exists = [fm fileExistsAtPath:userdocs];
+    if (!exists) {
+        [fm copyItemAtPath:plistPath toPath:userdocs error:nil];
+    }
+    
+    
     // Override point for customization after application launch.
     return YES;
+
 }
-							
+
+- (void) setUpAppearance {
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"NavBar"] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setTintColor:[UIColor brownColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{UITextAttributeTextColor : [UIColor brownColor], UITextAttributeTextShadowColor: [UIColor clearColor]}];
+//    [[UINavigationBar appearance] setTintColor:[UIColor lightGrayColor]];
+    [[UITabBar appearance] setSelectedImageTintColor:[UIColor brownColor]];
+//    [[UITabBar appearance] setTintColor:[UIColor lightGrayColor]];
+    [[UITableView appearance] setBackgroundColor:[UIColor whiteColor]];
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
