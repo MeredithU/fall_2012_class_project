@@ -15,8 +15,4 @@
 @property (retain, nonatomic) NSMutableArray *contentArray;
 
 
-- (IBAction)editButtonPressed:(id)sender;
-
-//@property (strong, nonatomic) OccasionDetailViewController *occasionDetailViewController;
-
 @end

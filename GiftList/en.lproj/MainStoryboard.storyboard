@@ -235,36 +235,6 @@
             </objects>
             <point key="canvasLocation" x="1725" y="161"/>
         </scene>
-        <!--Table View Controller - Add Person-->
-        <scene sceneID="pRa-Z8-19x">
-            <objects>
-                <tableViewController id="s1R-Cu-Kdx" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1Fd-i5-iAz">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="hWg-eN-5zq">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="s1R-Cu-Kdx" id="SbE-BA-Pcz"/>
-                            <outlet property="delegate" destination="s1R-Cu-Kdx" id="f59-vu-Fo3"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Add Person" id="ulN-BD-mZH"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bGb-KA-nfS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2227" y="161"/>
-        </scene>
         <!--Add Occasion View Controller - Add Occasion-->
         <scene sceneID="rtu-Ot-bTm">
             <objects>
@@ -272,7 +242,7 @@
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" sectionIndexMinimumDisplayRowCount="1" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="rKT-Se-Evx">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
                             <tableViewSection id="cJc-XR-et5">
                                 <cells>
@@ -497,9 +467,6 @@
         </class>
         <class className="OccasionListViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OccasionListViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="editButtonPressed:"/>
-            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

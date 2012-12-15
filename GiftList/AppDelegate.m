@@ -10,6 +10,7 @@
 
 @implementation AppDelegate
 
+
 + (NSString*) occasionlistPath {
     return [[AppDelegate stringWithUserDocuments] stringByAppendingPathComponent:@"occasion_list.plist"];
 }
@@ -20,9 +21,10 @@
     return documentsDirectory;
 }
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    sleep(3);
+    sleep(3); // remove this - just for demo purposes
     [self setUpAppearance];
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"occasion_list" ofType:@"plist"];
     NSString* userdocs = [AppDelegate occasionlistPath];
@@ -38,13 +40,16 @@
 
 }
 
-- (void) setUpAppearance {
+    // App appearance
+- (void) setUpAppearance
+{
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"NavBar"] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setTintColor:[UIColor brownColor]];
+    
     [[UINavigationBar appearance] setTitleTextAttributes:@{UITextAttributeTextColor : [UIColor brownColor], UITextAttributeTextShadowColor: [UIColor clearColor]}];
-//    [[UINavigationBar appearance] setTintColor:[UIColor lightGrayColor]];
+
     [[UITabBar appearance] setSelectedImageTintColor:[UIColor brownColor]];
-//    [[UITabBar appearance] setTintColor:[UIColor lightGrayColor]];
+
     [[UITableView appearance] setBackgroundColor:[UIColor whiteColor]];
 }
 
